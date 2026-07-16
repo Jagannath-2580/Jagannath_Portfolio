@@ -45,13 +45,17 @@ async function serve(pathname) {
   }
 }
 
-export default async function handler(input) {
+async function handler(input) {
   const request = getRequest(input);
   if (!request || request.method !== "GET") {
     return new Response("Method Not Allowed", { status: 405 });
   }
   return serve(new URL(request.url).pathname);
 }
+
+export default {
+  fetch: handler,
+};
 `;
 
 await mkdir('dist/server', { recursive: true });
