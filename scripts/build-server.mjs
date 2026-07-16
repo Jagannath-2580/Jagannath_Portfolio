@@ -2,9 +2,8 @@ import { cp, mkdir, writeFile } from 'node:fs/promises';
 
 const serverCode = `import { readFile, stat } from "node:fs/promises";
 import { extname, join, normalize } from "node:path";
-import { fileURLToPath } from "node:url";
 
-const root = fileURLToPath(new URL("../client/", import.meta.url));
+const root = join(process.cwd(), "dist/client");
 const mime = {
   ".html": "text/html; charset=utf-8",
   ".js": "text/javascript; charset=utf-8",
