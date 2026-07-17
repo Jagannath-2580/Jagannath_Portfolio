@@ -224,6 +224,14 @@ export function Contact() {
 
   return (
     <SectionShell id="contact" eyebrow="Contact" title="Ready to discuss Java full stack roles, projects, and collaborations.">
+      <div className="contact-hero mb-8 p-6 text-white">
+        <p className="font-display text-2xl font-extrabold">
+          Let's build something <span className="bg-gradient-to-r from-aurora via-electric to-ember bg-clip-text text-transparent">secure, scalable, and recruiter-ready.</span>
+        </p>
+        <p className="mt-3 max-w-3xl leading-7 text-slate-300">
+          Send role details, project requirements, or interview opportunities. Gmail compose opens automatically if EmailJS is not configured.
+        </p>
+      </div>
       <div className="grid gap-6 lg:grid-cols-[.9fr_1.1fr]">
         <div className="space-y-4">
           {contactCards.map(({ label, value, href, Icon }) => (
@@ -239,7 +247,11 @@ export function Contact() {
             </a>
           ))}
         </div>
-        <form onSubmit={sendEmail} className="glass-panel grid gap-4 p-4 sm:p-6">
+        <form onSubmit={sendEmail} className="contact-form-shell grid gap-4 p-4 sm:p-6">
+          <div>
+            <p className="font-display text-2xl font-extrabold text-slate-950 dark:text-white">Send a message</p>
+            <p className="mt-2 text-sm font-medium text-slate-600 dark:text-slate-400">I usually respond to relevant Java Full Stack and React Developer opportunities quickly.</p>
+          </div>
           <div className="grid gap-4 sm:grid-cols-2">
             <input name="name" required placeholder="Your name" className="field" />
             <input name="email" required type="email" placeholder="Your email" className="field" />

@@ -76,11 +76,28 @@ body {
   }
 
   .field {
-    @apply min-h-12 rounded-2xl border border-slate-200 bg-white/80 px-4 py-3 text-sm font-semibold text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-electric focus:ring-4 focus:ring-electric/15 dark:border-white/10 dark:bg-white/10 dark:text-white;
+    @apply min-h-12 rounded-2xl border border-slate-200 bg-white/85 px-4 py-3 text-sm font-semibold text-slate-900 outline-none transition placeholder:text-slate-400 focus:-translate-y-0.5 focus:border-electric focus:ring-4 focus:ring-electric/20 dark:border-white/10 dark:bg-white/10 dark:text-white;
+  }
+
+  .contact-hero {
+    @apply relative overflow-hidden rounded-[28px] border border-white/10 bg-slate-950 shadow-glow;
+  }
+
+  .contact-hero::before {
+    content: '';
+    @apply absolute inset-0 opacity-80;
+    background:
+      radial-gradient(circle at 12% 18%, rgba(91, 140, 255, 0.32), transparent 30%),
+      radial-gradient(circle at 82% 24%, rgba(31, 214, 165, 0.22), transparent 32%),
+      radial-gradient(circle at 50% 100%, rgba(255, 122, 89, 0.18), transparent 36%);
+  }
+
+  .contact-hero > * {
+    @apply relative z-10;
   }
 
   .contact-card {
-    @apply relative overflow-hidden transition duration-300 hover:-translate-y-1 hover:border-electric/50 hover:shadow-glow;
+    @apply relative overflow-hidden transition duration-300 hover:-translate-y-1 hover:border-electric/50 hover:shadow-glow active:-translate-y-0.5;
   }
 
   .contact-card::before {
@@ -112,6 +129,22 @@ body {
 
   .contact-card:hover .contact-card-arrow {
     @apply translate-x-1 -translate-y-1 text-aurora;
+  }
+
+  .contact-form-shell {
+    @apply relative overflow-hidden rounded-[28px] border border-slate-200/70 bg-white/[0.78] shadow-soft backdrop-blur-xl transition duration-300 hover:border-aurora/40 hover:shadow-glow dark:border-white/10 dark:bg-white/[0.07];
+  }
+
+  .contact-form-shell::before {
+    content: '';
+    @apply absolute inset-0 opacity-70;
+    background:
+      radial-gradient(circle at 18% 12%, rgba(91, 140, 255, 0.16), transparent 30%),
+      radial-gradient(circle at 88% 18%, rgba(31, 214, 165, 0.14), transparent 30%);
+  }
+
+  .contact-form-shell > * {
+    @apply relative z-10;
   }
 
   .skill-card {
