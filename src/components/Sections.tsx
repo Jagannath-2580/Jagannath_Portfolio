@@ -236,7 +236,7 @@ export function Contact() {
         <div className="space-y-4">
           {contactCards.map(({ label, value, href, Icon }) => (
             <a key={label} href={href} target={href.startsWith('http') ? '_blank' : undefined} rel="noreferrer" className="contact-card glass-panel flex items-center gap-4 p-5">
-              <span className="contact-card-icon grid h-12 w-12 place-items-center rounded-2xl bg-slate-950 text-white dark:bg-white/10">
+              <span className="contact-card-icon grid h-12 w-12 place-items-center rounded-2xl text-white">
                 <Icon size={22} />
               </span>
               <span>

@@ -113,6 +113,10 @@ body {
 
   .contact-card-icon {
     @apply transition duration-300;
+    background:
+      radial-gradient(circle at 28% 20%, rgba(255, 255, 255, 0.48), transparent 24%),
+      linear-gradient(135deg, #5b8cff 0%, #1fd6a5 52%, #ff7a59 100%);
+    box-shadow: 0 16px 38px rgba(91, 140, 255, 0.3);
   }
 
   .contact-card:hover::before {
@@ -120,7 +124,9 @@ body {
   }
 
   .contact-card:hover .contact-card-icon {
-    @apply bg-gradient-to-br from-electric to-aurora shadow-glow;
+    transform: translateY(-3px) rotate(-5deg) scale(1.08);
+    box-shadow: 0 22px 55px rgba(31, 214, 165, 0.48);
+    filter: saturate(1.2) brightness(1.05);
   }
 
   .contact-card-arrow {
