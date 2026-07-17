@@ -57,7 +57,13 @@ export function Hero() {
           <div className="absolute -inset-6 rounded-[44px] bg-gradient-to-br from-electric/25 via-aurora/20 to-ember/20 blur-3xl" />
           <div className="relative overflow-hidden rounded-[32px] border border-white/20 bg-[#7fb0f0] p-3 shadow-glow backdrop-blur-2xl dark:bg-[#7fb0f0]">
             <div className="overflow-hidden rounded-[24px] bg-[#7fb0f0]">
-              <img src={profile.photo} alt="Jagannath Behera profile" className="h-[380px] w-full scale-[1.18] object-cover object-[50%_24%] sm:h-[500px] lg:h-[540px]" />
+              <img
+                src={profile.photo}
+                alt="Jagannath Behera profile"
+                draggable={false}
+                onContextMenu={(event) => event.preventDefault()}
+                className="h-[380px] w-full select-none scale-[1.18] object-cover object-[50%_24%] sm:h-[500px] lg:h-[540px]"
+              />
             </div>
             <div className="absolute bottom-5 left-5 right-5 overflow-hidden rounded-2xl border border-white/30 bg-[#050816]/95 p-4 text-white shadow-[0_28px_80px_rgba(0,0,0,.72)] ring-1 ring-electric/30 backdrop-blur-2xl sm:bottom-6 sm:left-6 sm:right-6 sm:p-5">
               <div className="absolute inset-0 bg-gradient-to-br from-electric/18 via-transparent to-aurora/14" />

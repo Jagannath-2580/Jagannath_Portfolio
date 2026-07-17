@@ -1,4 +1,5 @@
-import { Route, Routes } from 'react-router-dom';
+import { useEffect } from 'react';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import { Footer } from './components/Footer';
 import { Hero } from './components/Hero';
 import { CustomCursor, Loader, Navbar, ScrollProgress } from './components/Layout';
@@ -27,12 +28,26 @@ function PortfolioPage() {
   );
 }
 
+function ScrollToTop() {
+  const { pathname, hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) return;
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+  }, [pathname, hash]);
+
+  return null;
+}
+
 export default function App() {
   return (
-    <Routes>
-      <Route path="/" element={<PortfolioPage />} />
-      <Route path="/projects/:slug" element={<ProjectDetails />} />
-      <Route path="*" element={<PortfolioPage />} />
-    </Routes>
+    <>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<PortfolioPage />} />
+        <Route path="/projects/:slug" element={<ProjectDetails />} />
+        <Route path="*" element={<PortfolioPage />} />
+      </Routes>
+    </>
   );
 }

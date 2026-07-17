@@ -113,6 +113,53 @@ body {
   .contact-card:hover .contact-card-arrow {
     @apply translate-x-1 -translate-y-1 text-aurora;
   }
+
+  .skill-card {
+    @apply relative overflow-hidden rounded-[28px] border border-slate-200/70 bg-white/[0.76] shadow-soft backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:shadow-glow active:-translate-y-1 dark:border-white/10 dark:bg-white/[0.07];
+  }
+
+  .skill-card::before {
+    content: '';
+    @apply absolute inset-0 opacity-0 transition duration-300;
+    background:
+      radial-gradient(circle at 18% 14%, color-mix(in srgb, var(--skill-accent) 34%, transparent), transparent 34%),
+      linear-gradient(135deg, color-mix(in srgb, var(--skill-accent) 16%, transparent), transparent 58%);
+  }
+
+  .skill-card::after {
+    content: '';
+    @apply absolute -bottom-12 left-1/2 h-24 w-28 -translate-x-1/2 rounded-full opacity-0 blur-2xl transition duration-300;
+    background: var(--skill-accent);
+  }
+
+  .skill-card:hover::before,
+  .skill-card:active::before {
+    @apply opacity-100;
+  }
+
+  .skill-card:hover::after,
+  .skill-card:active::after {
+    @apply opacity-60;
+  }
+
+  .skill-card > * {
+    @apply relative z-10;
+  }
+
+  .skill-icon {
+    background:
+      radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.42), transparent 24%),
+      linear-gradient(135deg, var(--skill-accent), #08090f 78%);
+    box-shadow: 0 16px 42px color-mix(in srgb, var(--skill-accent) 42%, transparent);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  }
+
+  .skill-card:hover .skill-icon,
+  .skill-card:active .skill-icon {
+    transform: translateY(-4px) rotate(-5deg) scale(1.08);
+    filter: saturate(1.2);
+    box-shadow: 0 22px 55px color-mix(in srgb, var(--skill-accent) 64%, transparent);
+  }
 }
 
 a,

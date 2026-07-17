@@ -2,9 +2,12 @@ import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
 import { ArrowUpRight, BookOpen, CheckCircle2, Download, Github, Info as InfoIcon, Mail, Send } from 'lucide-react';
 import { FormEvent, useState } from 'react';
+import type { CSSProperties } from 'react';
 import { Link } from 'react-router-dom';
 import { contactCards, education, experience, profile, projects, skills } from '../data/portfolio';
 import { SectionShell } from './Layout';
+
+const skillAccents = ['#5b8cff', '#1fd6a5', '#ff7a59', '#f43f5e', '#a78bfa', '#22d3ee'];
 
 export function About() {
   return (
@@ -46,22 +49,31 @@ function Info({ label, value }: { label: string; value: string }) {
 
 export function Skills() {
   return (
-    <SectionShell id="skills" eyebrow="Skills" title="A practical stack for secure, scalable full stack applications.">
+    <SectionShell id="skills" eyebrow="Skills" title="A powerful Java full stack toolkit for secure, scalable product development.">
+      <div className="mb-8 max-w-3xl rounded-[28px] border border-electric/20 bg-slate-950 p-6 text-white shadow-glow">
+        <p className="font-display text-2xl font-bold">
+          Backend depth, <span className="bg-gradient-to-r from-aurora to-electric bg-clip-text text-transparent">React polish</span>, and production-ready tooling.
+        </p>
+        <p className="mt-3 leading-7 text-slate-300">
+          Focused on Java, Spring Boot, REST APIs, secure authentication, database design, and clean frontend integration.
+        </p>
+      </div>
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {skills.map(({ name, category, Icon }, index) => (
           <motion.div
             key={name}
-            className="group glass-panel p-5 transition hover:-translate-y-1 hover:border-electric/40 hover:shadow-glow"
-            initial={{ opacity: 0, y: 18 }}
+            className="skill-card group p-5"
+            style={{ '--skill-accent': skillAccents[index % skillAccents.length] } as CSSProperties}
+            initial={{ opacity: 0, y: 22, scale: 0.96 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: index * 0.025 }}
+            transition={{ delay: index * 0.025, duration: 0.45 }}
           >
-            <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-950 text-white transition group-hover:bg-gradient-to-br group-hover:from-electric group-hover:to-aurora dark:bg-white/10">
+            <div className="skill-icon mb-5 flex h-14 w-14 items-center justify-center rounded-2xl text-white">
               <Icon size={24} />
             </div>
-            <h3 className="font-display text-lg font-bold text-slate-950 dark:text-white">{name}</h3>
-            <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">{category}</p>
+            <h3 className="font-display text-xl font-extrabold text-slate-950 transition group-hover:text-[var(--skill-accent)] dark:text-white">{name}</h3>
+            <p className="mt-2 text-sm font-semibold uppercase tracking-[0.16em] text-slate-500 dark:text-slate-400">{category}</p>
           </motion.div>
         ))}
       </div>
