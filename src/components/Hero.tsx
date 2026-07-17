@@ -69,7 +69,7 @@ export function Hero() {
               <div className="absolute inset-0 bg-gradient-to-br from-electric/18 via-transparent to-aurora/14" />
               <div className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-electric via-aurora to-ember shadow-[0_0_24px_rgba(31,214,165,.8)]" />
               <p className="relative text-sm font-extrabold leading-6 text-white drop-shadow-[0_2px_10px_rgba(0,0,0,.9)]">
-                Available for <span className="text-aurora drop-shadow-[0_0_12px_rgba(31,214,165,.9)]">Java Full Stack</span> and <span className="text-electric drop-shadow-[0_0_12px_rgba(91,140,255,.95)]">React Developer</span> roles
+                Available for <span className="text-aurora drop-shadow-[0_0_12px_rgba(31,214,165,.9)]">Java Full Stack Developer</span> roles
               </p>
               <p className="relative mt-2 font-display text-xl font-extrabold leading-7 text-white sm:text-2xl">
                 <span className="bg-gradient-to-r from-white via-aurora to-electric bg-clip-text text-transparent drop-shadow-[0_0_18px_rgba(91,140,255,.75)]">Spring Boot + React + MySQL</span>

@@ -11,13 +11,21 @@ const skillAccents = ['#5b8cff', '#1fd6a5', '#ff7a59', '#f43f5e', '#a78bfa', '#2
 
 export function About() {
   return (
-    <SectionShell id="about" eyebrow="About" title="A full stack developer focused on clean systems and polished user experiences.">
+    <SectionShell id="about" eyebrow="About Me" title="Engineering clean backend systems with modern full stack execution.">
       <div className="grid gap-6 lg:grid-cols-[.95fr_1.05fr]">
-        <div className="glass-panel p-7">
-          <p className="text-lg leading-8 text-slate-700 dark:text-slate-300">{profile.summary}</p>
-          <p className="mt-5 leading-8 text-slate-600 dark:text-slate-400">
-            My career objective is to contribute to high-quality engineering teams where I can build reliable backend services, responsive frontend experiences, and business applications that are easy to maintain, secure, and ready to scale.
+        <div className="about-card p-7">
+          <p className="font-display text-2xl font-extrabold leading-tight text-slate-950 dark:text-white">
+            <span className="bg-gradient-to-r from-electric via-aurora to-ember bg-clip-text text-transparent">Java Full Stack Developer</span> trained to build secure APIs, scalable services, and polished web applications.
           </p>
+          <p className="mt-5 text-lg leading-8 text-slate-700 dark:text-slate-300">{profile.summary}</p>
+          <p className="mt-5 leading-8 text-slate-600 dark:text-slate-400">
+            My career objective is to contribute to high-quality engineering teams where I can build reliable <span className="highlight-text">Spring Boot services</span>, responsive <span className="highlight-text">React interfaces</span>, and business applications that are easy to maintain, secure, and ready to scale.
+          </p>
+          <div className="mt-6 flex flex-wrap gap-2">
+            {['Java', 'Spring Boot', 'REST APIs', 'Microservices', 'React', 'MySQL'].map((item) => (
+              <span key={item} className="premium-chip">{item}</span>
+            ))}
+          </div>
           <div className="mt-6 grid gap-3 sm:grid-cols-2">
             <Info label="Home" value={profile.hometown} />
             <Info label="Currently Staying" value={profile.currentLocation} />
@@ -26,10 +34,12 @@ export function About() {
         <div className="relative min-h-[360px] overflow-hidden rounded-[32px] border border-slate-200/70 bg-slate-950 p-8 text-white shadow-glow dark:border-white/10">
           <div className="orbit-ring absolute -right-20 -top-20 h-72 w-72 rounded-full border border-dashed border-aurora/40" />
           <div className="relative z-10">
-            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-aurora">Professional Journey</p>
-            <h3 className="mt-4 font-display text-3xl font-bold">From training to production-minded project building.</h3>
+            <p className="inline-flex rounded-full border border-aurora/30 bg-aurora/10 px-4 py-2 text-sm font-extrabold uppercase tracking-[0.22em] text-aurora">Professional Journey</p>
+            <h3 className="mt-5 font-display text-3xl font-extrabold">
+              From <span className="bg-gradient-to-r from-aurora to-electric bg-clip-text text-transparent">NareshIT training</span> to production-minded project building.
+            </h3>
             <p className="mt-5 leading-8 text-slate-300">
-              After completing a 1-year Java Full Stack training program at NareshIT Technologies, I built projects that combine Spring Boot services, React screens, MySQL data models, authentication, and API documentation. I enjoy turning requirements into structured, testable, recruiter-ready software stories.
+              After completing a 1-year Java Full Stack training program, I built projects that combine <span className="text-aurora">Spring Boot services</span>, <span className="text-electric">React screens</span>, MySQL data models, authentication, and API documentation.
             </p>
           </div>
         </div>
