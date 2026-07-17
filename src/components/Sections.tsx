@@ -34,13 +34,23 @@ export function About() {
         <div className="relative min-h-[360px] overflow-hidden rounded-[32px] border border-slate-200/70 bg-slate-950 p-8 text-white shadow-glow dark:border-white/10">
           <div className="orbit-ring absolute -right-20 -top-20 h-72 w-72 rounded-full border border-dashed border-aurora/40" />
           <div className="relative z-10">
-            <p className="inline-flex rounded-full border border-aurora/30 bg-aurora/10 px-4 py-2 text-sm font-extrabold uppercase tracking-[0.22em] text-aurora">Professional Journey</p>
+            <p className="inline-flex rounded-full border border-aurora/30 bg-aurora/10 px-5 py-2.5 text-base font-extrabold uppercase tracking-[0.2em] text-aurora shadow-[0_0_30px_rgba(31,214,165,.18)]">Professional Journey</p>
             <h3 className="mt-5 font-display text-3xl font-extrabold">
               From <span className="bg-gradient-to-r from-aurora to-electric bg-clip-text text-transparent">NareshIT training</span> to production-minded project building.
             </h3>
-            <p className="mt-5 leading-8 text-slate-300">
+            <p className="mt-6 max-w-3xl font-display text-xl font-bold leading-9 text-white sm:text-2xl">
               After completing a 1-year Java Full Stack training program, I built projects that combine <span className="text-aurora">Spring Boot services</span>, <span className="text-electric">React screens</span>, MySQL data models, authentication, and API documentation.
             </p>
+            <div className="mt-6 grid gap-3 sm:grid-cols-2">
+              <div className="rounded-2xl border border-white/10 bg-white/8 p-4">
+                <p className="text-sm font-bold uppercase tracking-[0.18em] text-slate-400">Training</p>
+                <p className="mt-2 font-display text-2xl font-extrabold text-white">1 Year Java Full Stack</p>
+              </div>
+              <div className="rounded-2xl border border-white/10 bg-white/8 p-4">
+                <p className="text-sm font-bold uppercase tracking-[0.18em] text-slate-400">Focus</p>
+                <p className="mt-2 font-display text-2xl font-extrabold text-white">Spring Boot + React</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
