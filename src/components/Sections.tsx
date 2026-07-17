@@ -40,9 +40,11 @@ export function About() {
 
 function Info({ label, value }: { label: string; value: string }) {
   return (
-    <div className="rounded-2xl border border-slate-200/70 bg-white/60 p-4 dark:border-white/10 dark:bg-white/5">
-      <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500 dark:text-slate-500">{label}</p>
-      <p className="mt-2 text-sm font-semibold text-slate-900 dark:text-white">{value}</p>
+    <div className="info-card rounded-2xl border border-slate-200/70 bg-white/60 p-4 dark:border-white/10 dark:bg-white/5">
+      <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-electric">{label}</p>
+      <p className="mt-2 bg-gradient-to-r from-slate-950 via-electric to-aurora bg-clip-text font-display text-base font-extrabold text-transparent dark:from-white dark:via-aurora dark:to-electric">
+        {value}
+      </p>
     </div>
   );
 }
